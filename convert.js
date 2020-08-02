@@ -8,9 +8,10 @@ function fun(gene_h){
       num=i
       break
     }
-    console.log(gene_h)
-    //window.location.href="http://solanaceae.plantbiology.msu.edu/cgi-bin/annotation_report.cgi?gene_id="+geneID[i]+"&Submit=Submit"
-  }
+    }
+    console.log(gene_h,geneName)
+    window.location.href="http://solanaceae.plantbiology.msu.edu/cgi-bin/annotation_report.cgi?gene_id="+geneID[i]+"&Submit=Submit"
+  
 }
 
 
