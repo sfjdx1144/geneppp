@@ -9,8 +9,7 @@ function fun(gene_h){
       break
     }
     }
-    console.log(gene_h,geneName[77],num,geneName[77]==gene_h)
-    //window.location.href="http://solanaceae.plantbiology.msu.edu/cgi-bin/annotation_report.cgi?gene_id="+geneID[num]+"&Submit=Submit"
+    window.location.href="http://solanaceae.plantbiology.msu.edu/cgi-bin/annotation_report.cgi?gene_id="+geneID[num]+"&Submit=Submit"
   
 }
 
@@ -28,7 +27,7 @@ function task1 () {
       geneStr=request.responseText;
       }
       resolve('done');
-    }, 300);
+    }, 400);
   });
 }
 
@@ -47,7 +46,7 @@ function task2 () {
       geneName.shift(1);
       geneID.shift(1);
       resolve('done');
-    }, 300)
+    }, 400)
   });
 }
 
