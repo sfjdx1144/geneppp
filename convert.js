@@ -6,8 +6,15 @@ function fun(gene){
 'StPUB4':'PGSC0003DMG400021359',
 'StPUB5':'PGSC0003DMG400021358'
 }
+
 var geneID=gene_arr[gene]
 console.log();
 console.log(geneID)
 window.location.href="http://solanaceae.plantbiology.msu.edu/cgi-bin/annotation_report.cgi?gene_id="+geneID+"&Submit=Submit";
 }
+
+
+
+
+url=$.get('./genedata/gene.csv');
+console.log(url);
