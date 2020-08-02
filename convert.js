@@ -10,8 +10,6 @@ function fun(gene_h){
     }
     window.location.href="http://solanaceae.plantbiology.msu.edu/cgi-bin/annotation_report.cgi?gene_id="+geneID[i]+"&Submit=Submit"
   }
-
-
 }
 
 
@@ -37,8 +35,8 @@ function task2 () {
   return new Promise(resolve => {
     setTimeout(() => {
       console.log('2', '第二个任务');
-      
-          var gene=geneStr.split('\n')
+      console.log(geneStr)
+     var gene=geneStr.split('\n')
     for(i=0;i<gene.length;i++){
       var genetemp=gene[i].split(',');
       geneName.unshift(genetemp[0]);
@@ -59,14 +57,11 @@ async function allTasks () {
 }
 
             
-console.log(geneStr)
 
-geneReq()
-fun()
-function geneReq(){
-    
 
-}
+allTasks()
+
+
 
 
 
