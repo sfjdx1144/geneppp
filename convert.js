@@ -8,7 +8,8 @@ function fun(gene_h){
       num=i
       break
     }
-    window.location.href="http://solanaceae.plantbiology.msu.edu/cgi-bin/annotation_report.cgi?gene_id="+geneID[i]+"&Submit=Submit"
+    console.log(gene_h)
+    //window.location.href="http://solanaceae.plantbiology.msu.edu/cgi-bin/annotation_report.cgi?gene_id="+geneID[i]+"&Submit=Submit"
   }
 }
 
@@ -41,9 +42,7 @@ function task2 () {
       var genetemp=gene[i].split(',');
       geneName.unshift(genetemp[0]);
       geneID.unshift(genetemp[1]);
-    }
-      
-      
+    }      
       resolve('done');
     }, 300)
   });
