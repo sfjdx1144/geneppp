@@ -1,26 +1,44 @@
-function fun(gene){
-        var gene_arr ={
-'StPUB1':'PGSC0003DMG400022775',
-'StPUB2':'PGSC0003DMG400032151',
-'StPUB3':'PGSC0003DMG400021360',
-'StPUB4':'PGSC0003DMG400021359',
-'StPUB5':'PGSC0003DMG400021358'
+
+var geneName=[]
+var geneID=[]
+function fun(gene_h){
+  var num
+  for(i=0;i<geneName.length;i++){
+    if(gene_h==geneName){
+      num=i
+      break
+    }
+    window.location.href="http://solanaceae.plantbiology.msu.edu/cgi-bin/annotation_report.cgi?gene_id="+geneID[i]+"&Submit=Submit"
+  }
+
+
 }
 
-var geneID=gene_arr[gene]
-console.log();
-console.log(geneID)
-window.location.href="http://solanaceae.plantbiology.msu.edu/cgi-bin/annotation_report.cgi?gene_id="+geneID+"&Submit=Submit";
-}
+
+var geneStr
 
 var url = "gene.csv"/*json文件url，本地的就写本地的位置，如果是服务器的就写服务器的路径*/
             var request = new XMLHttpRequest();
             request.open("get", url);/*设置请求方法与路径*/
             request.send(null);/*不发送数据到服务器*/
             request.onload = function () {/*XHR对象获取到返回信息后执行*/
-                    console.log(request.responseText);
+                    geneStr=request.responseText;
                 }
-            }
+            
+
+
+geneReq()
+fun()
+function geneReq(){
+    var gene=geneStr.split('\n')
+    for(i=0;i<gene.length;i++){
+      var genetemp=gene[i].split(',');
+      geneName.unshift(genetemp[0]);
+      geneID.unshift(genetemp[1]);
+    }
+}
+
+
 
 
 
