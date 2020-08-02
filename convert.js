@@ -25,7 +25,7 @@ var url = "gene.csv"/*json文件url，本地的就写本地的位置，如果是
                     geneStr=request.responseText;
                 }
             
-
+console.log(geneStr)
 
 geneReq()
 fun()
