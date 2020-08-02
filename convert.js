@@ -26,7 +26,7 @@ function task1 () {
       geneStr=request.responseText;
       }
       resolve('done');
-    }, 1000);
+    }, 300);
   });
 }
 
@@ -45,7 +45,7 @@ function task2 () {
       
       
       resolve('done');
-    }, 1000)
+    }, 300)
   });
 }
 
