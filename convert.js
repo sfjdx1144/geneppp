@@ -17,19 +17,20 @@ function fun(gene_h){
 
 var geneStr
 
-var url = "gene.csv"/*json文件url，本地的就写本地的位置，如果是服务器的就写服务器的路径*/
-            var request = new XMLHttpRequest();
-            request.open("get", url);/*设置请求方法与路径*/
-            request.send(null);/*不发送数据到服务器*/
-            request.onload = function () {/*XHR对象获取到返回信息后执行*/
-                    geneStr=request.responseText;
-                }
+
             
 console.log(geneStr)
 
 geneReq()
 fun()
 function geneReq(){
+    var url = "gene.csv"/*json文件url，本地的就写本地的位置，如果是服务器的就写服务器的路径*/
+            var request = new XMLHttpRequest();
+            request.open("get", url);/*设置请求方法与路径*/
+            request.send(null);/*不发送数据到服务器*/
+            request.onload = function () {/*XHR对象获取到返回信息后执行*/
+                    geneStr=request.responseText;
+                }
     var gene=geneStr.split('\n')
     for(i=0;i<gene.length;i++){
       var genetemp=gene[i].split(',');
