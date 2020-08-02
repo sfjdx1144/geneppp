@@ -4,12 +4,12 @@ var geneID=[]
 function fun(gene_h){
   var num
   for(i=0;i<geneName.length;i++){
-    if(gene_h==geneName){
+    if(gene_h==geneName[i]){
       num=i
       break
     }
     }
-    console.log(gene_h,geneName,num,geneName[num])
+    console.log(gene_h,geneName[77],num,geneName[77]==gene_h)
     //window.location.href="http://solanaceae.plantbiology.msu.edu/cgi-bin/annotation_report.cgi?gene_id="+geneID[num]+"&Submit=Submit"
   
 }
