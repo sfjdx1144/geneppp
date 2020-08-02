@@ -43,6 +43,8 @@ function task2 () {
       geneName.unshift(genetemp[0]);
       geneID.unshift(genetemp[1]);
     }      
+      geneName.shift(1);
+      geneID.shift(1);
       resolve('done');
     }, 300)
   });
