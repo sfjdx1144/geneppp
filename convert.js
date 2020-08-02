@@ -15,6 +15,3 @@ window.location.href="http://solanaceae.plantbiology.msu.edu/cgi-bin/annotation_
 
 
 
-
-url=$.get('./genedata/gene.csv');
-console.log(url);
