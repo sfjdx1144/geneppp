@@ -76,8 +76,7 @@ function task2 () {
     }, 400)
   });
 }
-geneName=['a','b','c','d','e']
-geneID=[1,2,3,4,5]
+
 
 function task3 () {
   return new Promise(resolve => {
