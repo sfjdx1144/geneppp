@@ -34,7 +34,7 @@ function gene_sch(){
         window.alert("未查询到！")
       }
       else{
-        window.alert(geneID[num])
+        window.location.href="http://solanaceae.plantbiology.msu.edu/cgi-bin/annotation_report.cgi?gene_id="+geneID[num]+"&Submit=Submit"
       }
   }
 }
