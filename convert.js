@@ -85,7 +85,9 @@ function task3 () {
       var bd=document.getElementsByClassName('card shadow content-card list-card content-card-head')[0]
 
       var div=document.createElement("div");
-      for(i=geneID.length-1;i>1;i--){
+      geneID.shift(0)
+      geneName.shift(0)
+      for(i=geneID.length-1;i>0;i--){
         var a=document.createElement("a");
         a.style='margin:0 70px'
         a.href='javascript:fun(\''+geneName[i]+'\')'
