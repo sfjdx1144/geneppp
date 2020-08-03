@@ -19,8 +19,6 @@ function gene_sch(){
     window.alert("文本不能为空！")
   }
   else{
-    geneName=["a","b"]
-    geneID=["c","d"]
     var num
     var count=0
     for(i=0;i<geneName.length;i++){
