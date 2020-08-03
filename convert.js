@@ -10,8 +10,38 @@ function fun(gene_h){
     }
     }
     window.location.href="http://solanaceae.plantbiology.msu.edu/cgi-bin/annotation_report.cgi?gene_id="+geneID[num]+"&Submit=Submit"
-  
 }
+
+function gene_sch(){
+  var textbox=document.querySelector('body > section > div.container.shape-container.d-flex.align-items-center.py-lg > div > div > div > li > form > div > div > input')
+  var text=textbox.value
+  if(text==''){
+    window.alert("文本不能为空！")
+  }
+  else{
+    geneName=["a","b"]
+    geneID=["c","d"]
+    var num
+    var count=0
+    for(i=0;i<geneName.length;i++){
+      if(text==geneName[i]){
+        num=i
+        break
+      }
+      else{
+        count++;
+      }
+      }
+      if(count==geneName.length){
+        window.alert("未查询到！")
+      }
+      else{
+        window.alert(geneID[num])
+      }
+  }
+}
+
+
 
 
 var geneStr
@@ -19,11 +49,11 @@ var geneStr
 function task1 () {
   return new Promise(resolve => {
     setTimeout(() => {
-      var url = "gene.csv"/*json文件url，本地的就写本地的位置，如果是服务器的就写服务器的路径*/
+      var url = "gene.csv"
       var request = new XMLHttpRequest();
-      request.open("get", url);/*设置请求方法与路径*/
-      request.send(null);/*不发送数据到服务器*/
-      request.onload = function () {/*XHR对象获取到返回信息后执行*/
+      request.open("get", url);
+      request.send(null);
+      request.onload = function () {
       geneStr=request.responseText;
       }
       resolve('done');
@@ -42,7 +72,7 @@ function task2 () {
       var genetemp=gene[i].split(',');
       geneName.unshift(genetemp[0]);
       geneID.unshift(genetemp[1]);
-    }      
+    }
       geneName.shift(1);
       geneID.shift(1);
       resolve('done');
@@ -57,14 +87,7 @@ async function allTasks () {
   await task2();
 }
 
-            
+
 
 
 allTasks()
-
-
-
-
-
-
-
