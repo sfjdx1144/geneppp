@@ -73,7 +73,7 @@ function task2 () {
       geneName.shift(0);
       geneID.shift(0);
       resolve('done');
-    }, 300)
+    }, 500)
   });
 }
 
@@ -103,7 +103,7 @@ function task3 () {
 }
 
       resolve('done');
-    }, 300)
+    }, 500)
   });
 }
 
