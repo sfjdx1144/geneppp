@@ -91,7 +91,7 @@ function task3 () {
         a.href='javascript:fun(\''+geneName[i]+'\')'
         var butt=document.createElement("button");
         butt.className='btn btn-icon btn-3 btn-outline-primary'
-        butt.style="margin-bottom:30px;width:90px"
+        butt.style="margin-bottom:50px;width:95px"
         butt.type='button'
         var span=document.createElement("span");
         span.textContent=geneName[i]
