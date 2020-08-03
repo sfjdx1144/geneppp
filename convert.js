@@ -55,7 +55,7 @@ function task1 () {
       geneStr=request.responseText;
       }
       resolve('done');
-    }, 300);
+    }, 500);
   });
 }
 
@@ -73,7 +73,7 @@ function task2 () {
       geneName.shift(0);
       geneID.shift(0);
       resolve('done');
-    }, 400)
+    }, 300)
   });
 }
 
@@ -103,7 +103,7 @@ function task3 () {
 }
 
       resolve('done');
-    }, 500)
+    }, 300)
   });
 }
 
