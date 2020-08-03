@@ -55,7 +55,7 @@ function task1 () {
       geneStr=request.responseText;
       }
       resolve('done');
-    }, 400);
+    }, 300);
   });
 }
 
@@ -63,7 +63,7 @@ function task2 () {
 
   return new Promise(resolve => {
     setTimeout(() => {
-      console.log(geneStr)
+      //console.log(geneStr)
      var gene=geneStr.split('\n')
     for(i=0;i<gene.length;i++){
       var genetemp=gene[i].split(',');
@@ -103,7 +103,7 @@ function task3 () {
 }
 
       resolve('done');
-    }, 400)
+    }, 500)
   });
 }
 
