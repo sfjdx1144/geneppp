@@ -82,8 +82,7 @@ function task3 () {
   return new Promise(resolve => {
 
     setTimeout(() => {
-      var bd=document.getElementsByClassName('card shadow content-card list-card content-card-head')[0]
-
+      var bd=document.getElementsByClassName('card shadow content-card list-card content-card-head')[0];
       var div=document.createElement("div");
       for(i=geneID.length-2;i>=0;i--){
         var a=document.createElement("a");
@@ -114,14 +113,12 @@ async function allTasks () {
   await task3();
 }
 
-function getkey()
+function getkey(e)
 {
-    
-    if(event.keyCode==13){
-      window.alert(2)
-      gene_sch()
-    }   
-
+  var evt = window.event || e;
+   if (evt.keyCode == 13){
+     gene_sch();
+   }
 }
 
 allTasks()
