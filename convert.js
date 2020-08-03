@@ -116,7 +116,9 @@ async function allTasks () {
 
 function getkey()
 {
+    
     if(event.keyCode==13){
+      window.alert(2)
       gene_sch()
     }   
 
