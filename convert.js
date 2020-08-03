@@ -70,8 +70,8 @@ function task2 () {
       geneName.unshift(genetemp[0]);
       geneID.unshift(genetemp[1]);
     }
-      geneName.shift(1);
-      geneID.shift(1);
+      geneName.shift(0);
+      geneID.shift(0);
       resolve('done');
     }, 400)
   });
