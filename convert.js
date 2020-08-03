@@ -109,8 +109,8 @@ function task3 () {
 
 
 async function allTasks () {
-  //await task1();
-  //await task2();
+  await task1();
+  await task2();
   await task3();
 }
 
