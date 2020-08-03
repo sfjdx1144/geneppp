@@ -13,7 +13,7 @@ function fun(gene_h){
 }
 
 function gene_sch(){
-  var textbox=document.querySelector("body > section > div.container.shape-container.d-flex.align-items-center.py-lg > div > div > div > form > div > div > input")
+  var textbox=document.querySelector("body > section > div.container.shape-container.d-flex.align-items-center.py-lg > div > div > div > div > div > input")
   var text=textbox.value
   if(text==''){
     window.alert("文本不能为空！")
