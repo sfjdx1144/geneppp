@@ -114,7 +114,12 @@ async function allTasks () {
   await task3();
 }
 
+function getKey()
+{
+    if(event.keyCode==13){
+      gene_sch()
+    }   
 
-
+}
 
 allTasks()
