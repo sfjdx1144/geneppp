@@ -63,7 +63,6 @@ function task2 () {
 
   return new Promise(resolve => {
     setTimeout(() => {
-      console.log('2', '第二个任务');
       console.log(geneStr)
      var gene=geneStr.split('\n')
     for(i=0;i<gene.length;i++){
@@ -77,12 +76,43 @@ function task2 () {
     }, 400)
   });
 }
+geneName=['a','b','c','d','e']
+geneID=[1,2,3,4,5]
 
+function task3 () {
+  return new Promise(resolve => {
+
+    setTimeout(() => {
+      var bd=document.getElementsByClassName('card shadow content-card list-card content-card-head')[0]
+
+      var div=document.createElement("div");
+      for(i=0;i<geneID.length;i++){
+        var a=document.createElement("a");
+        a.style='margin:0 50px'
+        a.href='javascript:fun(\''+geneName[i]+'\')'
+        var butt=document.createElement("button");
+        butt.className='btn btn-icon btn-3 btn-outline-primary'
+        butt.style="margin-bottom:30px;"
+        butt.type='button'
+        var span=document.createElement("span");
+        span.textContent=geneName[i]
+        span.clasName='btn-inner--text'
+        butt.appendChild(span)
+        a.appendChild(butt)
+        div.appendChild(a)
+        bd.appendChild(div)
+}
+
+      resolve('done');
+    }, 400)
+  });
+}
 
 
 async function allTasks () {
-  await task1();
-  await task2();
+  //await task1();
+  //await task2();
+  await task3();
 }
 
 
