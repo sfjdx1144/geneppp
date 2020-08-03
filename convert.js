@@ -87,11 +87,11 @@ function task3 () {
       var div=document.createElement("div");
       for(i=geneID.length-2;i>=0;i--){
         var a=document.createElement("a");
-        a.style='margin:0 70px'
+        a.style='margin:0 65px'
         a.href='javascript:fun(\''+geneName[i]+'\')'
         var butt=document.createElement("button");
         butt.className='btn btn-icon btn-3 btn-outline-primary'
-        butt.style="margin-bottom:30px;width:100px"
+        butt.style="margin-bottom:30px;width:90px"
         butt.type='button'
         var span=document.createElement("span");
         span.textContent=geneName[i]
