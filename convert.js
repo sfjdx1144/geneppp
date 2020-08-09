@@ -14,7 +14,7 @@ function fun(gene_h){
 
 function gene_sch(){
   var textbox=document.querySelector("body > section > div.container.shape-container.d-flex.align-items-center.py-lg > div > div > div > div > div > input")
-  var text=textbox.value
+  var text=textbox.value.replace(/\s/g, "");
   if(text==''){
     window.alert("文本不能为空！")
   }
@@ -87,7 +87,7 @@ function task3 () {
       for(i=geneID.length-2;i>=0;i--){
         var a=document.createElement("a");
         a.style='margin:0 65px'
-        a.href='javascript:fun(\''+geneName[i]+'\')'
+        a.href='javascript:fun(\''+geneName[i].replace(/\s/g, "")+'\')'
         var butt=document.createElement("button");
         butt.className='btn btn-icon btn-3 btn-outline-primary'
         butt.style="margin-bottom:50px;width:95px"
