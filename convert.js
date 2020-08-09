@@ -87,13 +87,13 @@ function task3 () {
       for(i=geneID.length-2;i>=0;i--){
         var a=document.createElement("a");
         a.style='margin:0 65px'
-        a.href='javascript:fun(\''+geneName[i].replace(/\s/g, "")+'\')'
+        a.href='javascript:fun(\''+geneName[i]+'\')'
         var butt=document.createElement("button");
         butt.className='btn btn-icon btn-3 btn-outline-primary'
         butt.style="margin-bottom:50px;width:95px"
         butt.type='button'
         var span=document.createElement("span");
-        span.textContent=geneName[i]
+        span.textContent=geneName[i].replace(/\s/g, "")
         span.clasName='btn-inner--text'
         butt.appendChild(span)
         a.appendChild(butt)
