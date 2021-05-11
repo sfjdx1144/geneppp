@@ -1,22 +1,29 @@
 
 var geneName=[]
 var geneID=[]
+var judge0=true
+var judge1=false
+var judge2=false
 function fun(gene_h){
   var num
   for(i=0;i<geneName.length;i++){
     if(gene_h==geneName[i]){
-      num=i
-      break
+      num=i;
+      break;
     }
     }
-    window.location.href="http://solanaceae.plantbiology.msu.edu/cgi-bin/annotation_report.cgi?gene_id="+geneID[num]+"&Submit=Submit"
+    if(geneID[num].indexOf("Soltu.")!=-1){
+    window.location.href="http://solanaceae.plantbiology.msu.edu/cgi-bin/annotation_report.cgi?orf="+geneID[num]+"&Submit=Submit"
+  }else{
+    window.location.href="https://www.ncbi.nlm.nih.gov/nucleotide/"+geneID[num]
+  }
 }
 
 function gene_sch(){
   var textbox=document.querySelector("body > section > div.container.shape-container.d-flex.align-items-center.py-lg > div > div > div > div > div > input")
   var text=textbox.value.replace(/\s/g, "");
   if(text==''){
-    window.alert("文本不能为空！")
+    window.alert("Text property must not be blank!")
   }
   else{
     var num;
@@ -31,88 +38,21 @@ function gene_sch(){
       }
       }
       if(count==geneName.length){
-        window.alert("未查询到！")
+        window.alert("Not found!")
       }
       else{
-        window.location.href="http://solanaceae.plantbiology.msu.edu/cgi-bin/annotation_report.cgi?gene_id="+geneID[num]+"&Submit=Submit"
+        if(geneID[num].indexOf("Soltu.")!=-1){
+        window.location.href="http://solanaceae.plantbiology.msu.edu/cgi-bin/annotation_report.cgi?orf="+geneID[num]+"&Submit=Submit"
+      }else{
+        window.location.href="https://www.ncbi.nlm.nih.gov/nucleotide/"+geneID[num]
+      }
+
+
+
       }
   }
 }
-
-
-
-
 var geneStr
-
-function task1 () {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      var url = "gene.csv"
-      var request = new XMLHttpRequest();
-      request.open("get", url);
-      request.send(null);
-      request.onload = function () {
-      geneStr=request.responseText;
-      }
-      resolve('done');
-    }, 500);
-  });
-}
-
-function task2 () {
-
-  return new Promise(resolve => {
-    setTimeout(() => {
-      //console.log(geneStr)
-     var gene=geneStr.split('\n')
-    for(i=0;i<gene.length;i++){
-      var genetemp=gene[i].split(',');
-      geneName.unshift(genetemp[0]);
-      geneID.unshift(genetemp[1]);
-    }
-      geneName.shift(0);
-      geneID.shift(0);
-      resolve('done');
-    }, 500)
-  });
-}
-
-
-function task3 () {
-  return new Promise(resolve => {
-
-    setTimeout(() => {
-      var bd=document.getElementsByClassName('card shadow content-card list-card content-card-head')[0];
-      var div=document.createElement("div");
-      for(i=geneID.length-2;i>=0;i--){
-        var a=document.createElement("a");
-        a.style='margin:0 65px'
-        a.href='javascript:fun(\''+geneName[i]+'\')'
-        var butt=document.createElement("button");
-        butt.className='btn btn-icon btn-3 btn-outline-primary'
-        butt.style="margin-bottom:50px;width:95px"
-        butt.type='button'
-        var span=document.createElement("span");
-        span.textContent=geneName[i].replace(/\s/g, "")
-        span.clasName='btn-inner--text'
-        butt.appendChild(span)
-        a.appendChild(butt)
-        div.appendChild(a)
-        bd.appendChild(div)
-}
-
-      resolve('done');
-    }, 500)
-  });
-}
-
-
-async function allTasks () {
-  await task1();
-  await task2();
-  await task3();
-}
-
 function getkey(e)
 {
   var evt = window.event || e;
@@ -120,5 +60,55 @@ function getkey(e)
      gene_sch();
    }
 }
+setInterval(() => {
+  if(judge0){
+  var url = "gene.csv"
+  var request = new XMLHttpRequest();
+  request.open("get", url);
+  request.send(null);
+  request.onload = function () {
+  geneStr=request.responseText;
+  }
+  judge0=false
+  judge1=true
+}
+}, 400);
 
-allTasks()
+setInterval(() => {
+  if(judge1){
+ var gene=geneStr.split('\n')
+for(i=0;i<gene.length;i++){
+  var genetemp=gene[i].split(',');
+  geneName.unshift(genetemp[0]);
+  geneID.unshift(genetemp[1]);
+}
+  geneName.shift(0);
+  geneID.shift(0);
+  judge1=false
+  judge2=true
+}
+}, 500)
+
+setInterval(() => {
+    if(judge2){
+  var bd=document.getElementsByClassName('card shadow content-card list-card content-card-head')[0];
+  var div=document.createElement("div");
+  for(i=geneID.length-2;i>=0;i--){
+    var a=document.createElement("a");
+    a.style='margin:0 65px'
+    a.href='javascript:fun(\''+geneName[i]+'\')'
+    var butt=document.createElement("button");
+    butt.className='btn btn-icon btn-3 btn-outline-primary'
+    butt.style="margin-bottom:50px;width:95px"
+    butt.type='button'
+    var span=document.createElement("span");
+    span.textContent=geneName[i].replace(/\s/g, "")
+    span.clasName='btn-inner--text'
+    butt.appendChild(span)
+    a.appendChild(butt)
+    div.appendChild(a)
+    bd.appendChild(div)
+    judge2=false
+}
+}
+}, 600)
