@@ -12,11 +12,7 @@ function fun(gene_h){
       break;
     }
     }
-    if(geneID[num].indexOf("Soltu.")!=-1){
-    window.location.href="http://solanaceae.plantbiology.msu.edu/cgi-bin/annotation_report.cgi?orf="+geneID[num]+"&Submit=Submit"
-  }else{
-    window.location.href="https://www.ncbi.nlm.nih.gov/nucleotide/"+geneID[num]
-  }
+    window.location.href="https://phytozome.jgi.doe.gov/pz/portal.html#!gene?search=1&detail=1&method=5092&searchText=transcriptid:"+geneID[num]
 }
 
 function gene_sch(){
@@ -41,13 +37,7 @@ function gene_sch(){
         window.alert("Not found!")
       }
       else{
-        if(geneID[num].indexOf("Soltu.")!=-1){
-        window.location.href="http://solanaceae.plantbiology.msu.edu/cgi-bin/annotation_report.cgi?orf="+geneID[num]+"&Submit=Submit"
-      }else{
-        window.location.href="https://www.ncbi.nlm.nih.gov/nucleotide/"+geneID[num]
-      }
-
-
+        window.location.href="https://phytozome.jgi.doe.gov/pz/portal.html#!gene?search=1&detail=1&method=5092&searchText=transcriptid:"+geneID[num]
 
       }
   }
