@@ -12,7 +12,7 @@ function fun(gene_h){
       break;
     }
     }
-    window.location.href="https://phytozome.jgi.doe.gov/pz/portal.html#!gene?search=1&detail=1&method=5092&searchText=transcriptid:"+geneID[num]
+    window.location.href="https://phytozome-next.jgi.doe.gov/report/gene/Stuberosum_v4_03/"+geneID[num]
 }
 
 function gene_sch(){
@@ -37,7 +37,7 @@ function gene_sch(){
         window.alert("Not found!")
       }
       else{
-        window.location.href="https://phytozome.jgi.doe.gov/pz/portal.html#!gene?search=1&detail=1&method=5092&searchText=transcriptid:"+geneID[num]
+       window.location.href="https://phytozome-next.jgi.doe.gov/report/gene/Stuberosum_v4_03/"+geneID[num]
 
       }
   }
